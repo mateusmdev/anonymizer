@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  anonymizer:
+    image: registry.gitlab.com/dalibo/postgresql_anonymizer
+    container_name: postgres-anonymizer
+    environment:
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "6543:5432"
+    networks:
+      - anonymizer_network
+
+  pg-admin:
+    image: dpage/pgadmin4
+    container_name: pg-admin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@mail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports: 
+      - "15432:80"
+    depends_on:
+      - anonymizer
+    networks:
+      - anonymizer_network
+
+networks:
+  anonymizer_network:
+    driver: bridge

@@ -1,0 +1,17 @@
+{
+  "name": {
+    "value": "Fulano",
+    "type": "name",
+    "anon": "REDACTED"
+  },
+  "zipcode": {
+    "value": "76182413",
+    "type": "zipcode"
+  },
+  "birthDate": {
+    "value": "1989-12-29",
+    "type": "daterange",
+    "anon": "decade"
+  }
+
+}

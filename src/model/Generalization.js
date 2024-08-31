@@ -34,15 +34,13 @@ class Generalization extends IAnonymizerStrategy{
       })
     })
 
-    console.log(promiseArray)
     await Promise.all(promiseArray)
 
-    console.log(result)
     return result
   }
 
   _getGeneralizationSQL(dataType, value, anon){
-    console.log(dataType)
+    
     const methods = {
       zipcode: `SELECT anon.generalize_int4range(${value})`,
       daterange: `SELECT anon.generalize_daterange('${value}', '${anon}')`

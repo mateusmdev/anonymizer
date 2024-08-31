@@ -7,17 +7,4 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
     logging: false
 })
 
-// Testar a conexão com o banco de dados
-async function testConnection() {
-    try {
-      await sequelize.authenticate();
-      console.log('Conexão bem-sucedida.');
-    } catch (error) {
-      console.error('Erro ao conectar-se ao banco de dados:', error);
-    }
-}
-  
-// Chamar a função para testar a conexão
-testConnection()
-
 module.exports = sequelize

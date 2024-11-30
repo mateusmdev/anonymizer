@@ -1,9 +1,4 @@
 {
-  "name": {
-    "value": "Fulano",
-    "type": "name",
-    "anon": "REDACTED"
-  },
   "zipcode": {
     "value": 76182413,
     "type": "zipcode"

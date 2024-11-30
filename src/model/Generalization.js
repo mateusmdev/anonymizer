@@ -14,23 +14,22 @@ class Generalization extends IAnonymizerStrategy{
       return new Promise(async (resolve, reject) => {
         const [key, data] = field
         const { value, type, anon } = data
-
-        if (type === 'name'){
-          result[key] = anon
-          return resolve()
-        }
         
-        const query = this._getGeneralizationSQL(type, value, anon)
-        if (query == null) throw new Error('InvalidType Error.')
+        try {
+          const query = this._getGeneralizationSQL(type, value, anon)
+          if (query == null) throw new Error('InvalidTypeError.')
 
-        const [anonymizedData] = await sequelize.query(query, {
-          type: QueryTypes.SELECT
-        })
+          const [anonymizedData] = await sequelize.query(query, {
+            type: QueryTypes.SELECT
+          })
 
-        const sanitizedResult = this._sanitizeResult(anonymizedData)
+          const sanitizedResult = this._sanitizeResult(anonymizedData)
 
-        result[key] = sanitizedResult
-        resolve()
+          result[key] = sanitizedResult
+          resolve()
+        } catch (error) {
+          reject(error)
+        }
       })
     })
 

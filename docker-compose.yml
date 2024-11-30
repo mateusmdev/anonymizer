@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_PASSWORD: admin
     ports:
-      - "6543:5432"
+      - "5432:5432"
     networks:
       - anonymizer_network
 
@@ -20,6 +20,16 @@ services:
       - "15432:80"
     depends_on:
       - anonymizer
+    networks:
+      - anonymizer_network
+
+  dataw-api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: dataw-api
+    ports:
+      - "3000:3000"
     networks:
       - anonymizer_network
 

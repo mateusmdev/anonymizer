@@ -41,7 +41,7 @@ class Generalization extends IAnonymizerStrategy{
   _getGeneralizationSQL(dataType, value, anon){
     
     const methods = {
-      zipcode: `SELECT anon.generalize_int4range(${value})`,
+      zipcode: `SELECT anon.generalize_int4range(${value}, ${anon})`,
       daterange: `SELECT anon.generalize_daterange('${value}', '${anon}')`
     }
 

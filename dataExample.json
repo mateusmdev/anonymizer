@@ -8,5 +8,30 @@
     "value": "2010-12-29",
     "type": "daterange",
     "anon": "decade"
+  },
+  "consultaMedica": {
+    "value": "2015-08-19",
+    "type": "daterange",
+    "anon": "century"
+  },
+  "idadeFulano": {
+    "value": 30,
+    "type": "number",
+    "anon": 10
+  },
+  "salarioFulano": {
+    "value": 2300,
+    "type": "number",
+    "anon": 1200
+  },
+  "salarioBeltrano": {
+    "value": 2800,
+    "type": "number",
+    "anon": 1200
+  },
+  "salarioCiclano": {
+    "value": 15000,
+    "type": "number",
+    "anon": 1200
   }
 }

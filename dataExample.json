@@ -1,7 +1,7 @@
 {
   "zipcode": {
     "value": 76182413,
-    "type": "zipcode",
+    "type": "number",
     "anon": 1000
   },
   "birthDate": {
